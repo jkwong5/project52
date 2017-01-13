@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/vendor/styles/normalize.css">
+  </head>
+  <body>
+    <div>
+      <form class="calculator" action="index.html" method="post">
+        <input id="result" class="input"/>
+        <br>
+        <button type="button" value="7" class="button">7</button>
+        <button type="button" value="8" class="button">8</button>
+        <button type="button" value="9" class="button">9</button>
+        <button type="button" value="*" class="operator">*</button>
+        <br>
+        <button type="button" value="4" class="button">4</button>
+        <button type="button" value="5" class="button">5</button>
+        <button type="button" value="6" class="button">6</button>
+        <button type="button" value="/" class="operator">/</button>
+        <br>
+        <button type="button" value="1" class="button">1</button>
+        <button type="button" value="2" class="button">2</button>
+        <button type="button" value="3" class="button">3</button>
+        <button type="button" value="+" class="operator">+</button>
+        <br>
+        <button type="button" value="0" class="button">0</button>
+        <button type="button" value="." class="button">.</button>
+        <button type="reset" value="c" class="clear">C</button>
+        <button type="button" value="-" class="operator">-</button>
+        <br>
+        <button type="button" value="=" class="calculate">=</button>
+      </form>
+    </div>
+    <script src="/vendor/scripts/jquery-2.1.4.js"></script>
+    <script>
+    $("document").ready(function(){
+      var input = null;
+
+      $(".clear").on("click", function(){
+        $(".input").val("");
+      });
+
+      $(".button").on("click", function(){
+        var etext = $("#result").val();
+        if (etext != "0") {
+          var val1 = etext;
+          var value = $(this);
+          var val2 = value.text();
+          var res = val1 + val2;
+          $("#result").val(res);
+        } else {
+          $("#result").val();
+        }
+      });
+
+      $(function(e){
+        var inter = null;
+        var operator;
+        $(".operator").on("click", function(e){
+          var val1 = $("#result").val();
+          if (inter != null){
+            var result = ApplyOperation(inter, val1, operator);
+            inter = result;
+          } else {
+            inter = val1;
+          }
+          operator = $(this).text();
+          $("input").val("");
+        });
+
+        $(".calculate").on("click", function(e){
+          var op = operator;
+          var res;
+          var val2 = $("#result").val();
+          if (val2 != ""){
+            res = ApplyOperation(inter, val2, operator);
+          } else {
+            res = inter;
+          }
+          $("#result").val(res);
+          inter = null;
+        });
+      });
+
+
+      function ApplyOperation(val1, val2, operator) {
+        var res;
+        switch (operator){
+          case "+":
+            res = addition(val1, val2);
+            break;
+          case "-":
+            res = subtraction(val1, val2);
+            break;
+          case "*":
+            res = multiplication(val1, val2);
+            break;
+          case "/":
+            res = division(val1, val2);
+            break;
+        }
+        return res;
+      }
+
+      function addition(first, second) {
+        var a = parseFloat(first);
+        var b = parseFloat(second);
+        var sum = a + b;
+        return sum;
+      }
+
+      function subtraction(first, second) {
+        var a = parseFloat(first);
+        var b = parseFloat(second);
+        var sub = a - b;
+        return sub;
+      }
+
+      function multiplication(first, second) {
+        var a = parseFloat(first);
+        var b = parseFloat(second);
+        var prod = a * b;
+        return prod;
+      }
+
+      function division(first, second) {
+        var a = parseFloat(first);
+        var b = parseFloat(second);
+        var div = a / b;
+        return div;
+      }
+      //
+      //   $(".input").val($(this).val())
+      // });
+      // function math(val){
+      //   $(".input").value += val;
+      // }
+
+    });
+    </script>
+  </body>
+</html>

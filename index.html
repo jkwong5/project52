@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Project 52</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/vendor/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <script id="article-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-month="{{month}}" data-category="{{category}}">
+        <header>
+          <h1><a href="{{url}}">{{title}}</a></h1>
+          <div class="byline">
+            <!-- By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            {{publishStatus}} -->
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        {{publishStatus}} in {{month}}
+        <!-- <a href="/article/{{id}}" class="read-on">Read on &rarr;</a> -->
+      </article>
+    </script>
+    <script id="option-template" type="text/x-handlebars-templage">
+      <option value="{{val}}">{{val}}</option>
+    </script>
+  </head>
+  <body>
+    <header class="site-header clearfix">
+      <section class="heading-group-h1">
+        <h1 class="tab" data-content="articles"><a href="/">
+          Project 52</a>
+        </h1>
+        <h2>Coding Experiements From Each Week</h2>
+      </section>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
+      </nav>
+    </header>
+    <main>
+      <section id="articles" class="tab-content">
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="month-filter">
+                <option value="">-- Filter by Months --</option>
+              </select>
+            </li>
+            <li>
+              <select id="category-filter">
+                <option value="">-- Filter by Categories --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="about" class="tab-content">
+        <header>
+          This page is a host to an array of 2017 mini projects and experiments.
+          Each week I will commit to completing a project.
+        </header>
+        <section>
+          <h1>Check out my <a href="http://www.wongjon.com">Homepage</a></h1>
+          <ul>
+            <li>Coding</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <div class="tab" data-content="about">
+        <a class="footer" href="/about">Jonathan Wong &copy; 2017</a>
+      </div>
+    </footer>
+
+    <script src="/vendor/scripts/jquery-2.1.4.js"></script>
+    <script src="/vendor/scripts/handlebars.js"></script>
+    <script src="/vendor/scripts/marked.js"></script>
+    <script src="/vendor/scripts/html5sql.js"></script>
+    <script src="/scripts/webdb.js"></script>
+    <script src="/vendor/scripts/page.js"></script>
+
+    <!-- Script files for the Article resource: -->
+    <script src="/scripts/article.js"></script>
+    <script src="/scripts/articleView.js"></script>
+    <script src="/scripts/articleController.js"></script>
+
+    <script src="/scripts/aboutController.js"></script>
+
+    <script src="/scripts/routes.js"></script>
+  </body>
+</html>

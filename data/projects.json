@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Calculator",
+    "category": "Switches",
+    "month": "January",
+    "authorUrl": "http://http://corrine.net",
+    "url": "/jan1.html",
+    "publishedOn": "2017-01-7",
+    "body": "## Simple Calulator built with jQuery! Tried to use input type button, but ended up using button element."
+  },
+  {
+    "title": "Nickname Generator",
+    "category": "Fun",
+    "month": "January",
+    "authorUrl": "http://http://vidal.net",
+    "url": "/jan2.html",
+    "publishedOn": "2017-01-13",
+    "body": "## Try a new nickname on for size! \n\nJust playing with Math and Random functions from an array. Comes with a special coment about your new name."
+  },
+  {
+    "title": "Copier",
+    "category": "protocol",
+    "month": "January",
+    "authorUrl": "http://https://eleanore.name",
+    "url": "/jan3.html",
+    "publishedOn": "2017-01-20",
+    "body": "## "
+  }
+]

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nickname Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/vendor/styles/normalize.css">
+  </head>
+  <body>
+    <div>
+      <h1>Nickname Generator</h1>
+        <br>
+        <button type="button" value="random" class="button">Name Me</button>
+    </div><br>
+    <div><span id="fname"></span> <span id="lname1"></span><span id="lname2"></span>
+    </div><br>
+    <div id="comment">
+    </div>
+    <script src="/vendor/scripts/jquery-2.1.4.js"></script>
+    <script>
+    $("document").ready(function(){
+      var first = ['Fantasia', 'Chesty', 'Starr', 'Diamond', 'Montana', 'Angel', 'Sugar', 'Mimi', 'Lola', 'Kitty', 'Roxie', 'Dallas', 'Princess', 'Heidi', 'Bambi', 'Bunny', 'Brandy', 'Sugar', 'Candy', 'Raquelle', 'Sapphire', 'Cinnamon', 'Blaze', 'Trixie', 'Isis', 'Jade'];
+      var last1 = ['Leather', 'Dream', 'Sunny', 'Deep', 'Heaven', 'Tight', 'Shimmer', 'Velvet', 'Lusty', 'Harley', 'Passion', 'Dazzle', 'Dixon', 'Spank', 'Glitter', 'Razor', 'Meadow', 'Glitzy', 'Sparkle', 'Sweet', 'Silver', 'Tickle', 'Cherry', 'Hard', 'Night', 'Amber', 'Busty'];
+      var last2 = ['hooter', 'horn', 'tower', 'fire', 'thighs', 'hips', 'side', 'jugs', 'shock', 'cocker', 'brook', 'tush', 'sizzle', 'ridge', 'kiss', 'bomb', 'cream', 'thong', 'heat', 'whip', 'cheeks', 'rock', 'hiney', 'button', 'lick', 'juice'];
+      var comment = ['Great name!', 'Just as your mother would have wanted!', 'Wear it with pride!', 'Has a ring to it!', 'Amazing!', 'Sounds like my dogs name!', 'Is that the name of that bar?', 'Whoa baby!', 'Could not have said it any better!', 'What language is this?', 'Fresh!', 'Music to my ears!', 'Are you a super hero?', 'Very fitting of you!', 'Precious name!', 'It is what I would have named my cat!', 'What is the meaning behind your name?', 'I have your name but not your story!'];
+      $(".button").on("click", function(){
+        var result1 = document.getElementById("fname")
+        result1.innerHTML = first[Math.floor(Math.random() * first.length)];
+        var result2 = document.getElementById("lname1")
+        result2.innerHTML = last1[Math.floor(Math.random() * last1.length)];
+        var result3 = document.getElementById("lname2")
+        result3.innerHTML = last2[Math.floor(Math.random() * last2.length)];
+        var result4 = document.getElementById("comment")
+        result4.innerHTML = comment[Math.floor(Math.random() * comment.length)];
+      });
+    });
+    </script>
+  </body>
+</html>
